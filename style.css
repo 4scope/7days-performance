@@ -462,7 +462,9 @@ nav .main-nav .navigation .menu{
 
 .sections .grid-container .cards .btn-container span img{
     width: 1.5rem;
+    aspect-ratio: 1 / 1;
     margin: 0 0 -.25rem .75rem;
+    background-color: #fff;
 }
 
 /*============== end of upcoming competition section styling ==============*/
@@ -1363,6 +1365,10 @@ nav .main-nav .navigation .menu{
     }
     .image-slider .image-container .image-text .image-nav-text .text a{
         width: 95%;
+    }
+    .sections .grid-container .cards .btn-container{
+        white-space: nowrap;
+        font-size: .8rem;
     }
 
 }
