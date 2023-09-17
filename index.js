@@ -48,15 +48,23 @@ let cards = document.querySelectorAll('.cards');
 let buttons = document.querySelectorAll('.btn-container');
 
 cards.forEach((card, index) => {
-  card.addEventListener('mouseover', function () {
-    buttons[index].style.background = "#2aa8f8";
-    buttons[index].style.color = "#fff";
+    let spans = buttons[index].querySelector("span").querySelectorAll("svg")
+    card.addEventListener('mouseover', function () {
+        buttons[index].style.background = "#2aa8f8";
+        buttons[index].style.color = "#fff";
+
+        spans[0].style.display = "none"
+        spans[1].style.display = "block"
+        // buttons[index].querySelector("span").style.color = "#fff"
   });
 
-  card.addEventListener('mouseout', function () {
-    buttons[index].style.background = "initial";
-    buttons[index].style.color = "initial";
-  });
+    card.addEventListener('mouseout', function () {
+        buttons[index].style.background = "initial";
+        buttons[index].style.color = "#2aa8f8";
+
+        spans[0].style.display = "block"
+        spans[1].style.display = "none"
+    });
 });
 
 

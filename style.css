@@ -64,9 +64,10 @@ nav .main-nav .responsive-nav{
     display: none;
     position: relative;
 }
-/* 
-nav .main-nav .responsive-nav .responsive-nav-container{
-} */
+
+nav .main-nav .responsive-nav .responsive-nav-container::-webkit-scrollbar{
+    display: none;
+}
 
 nav .main-nav .responsive-nav .responsive-nav-container .close-nav{
     width: 5rem;
@@ -126,6 +127,26 @@ nav .main-nav .navigation .menu{
     display: none;
 }
 
+nav .main-nav .navigation .cart{
+    position: relative;
+}
+
+nav .main-nav .navigation .cart::before{
+    content: "3";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f44336;
+    color: #fff;
+    border-bottom-right-radius: 10px;
+}
+
 /*=========== image slider section style ============*/
 
 .image-slider{
@@ -181,10 +202,13 @@ nav .main-nav .navigation .menu{
     border-radius: 40px;
 }
 
-.image-slider .image-container .image-text .image-nav-text .text a > span .image-span img{
+.image-slider .image-container .image-text .image-nav-text .text a > span .image-span{
     width: 3rem;
-    margin-bottom: -1rem;
-    display: inline-block;
+}
+
+.image-slider .image-container .image-text .image-nav-text .text a > span .image-span svg{
+    width: 100%;
+    display: block;
 }
 
 /*========== image slider nav ==========*/
@@ -274,6 +298,10 @@ nav .main-nav .navigation .menu{
     justify-content: center;
     align-items: center;
     gap: 2rem;
+}
+
+.sticky-nav ul::-webkit-scrollbar{
+    display: none;
 }
 
 .sticky-nav ul li{
@@ -451,20 +479,22 @@ nav .main-nav .navigation .menu{
     border-radius: 10px;
     font-weight: 600;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 13px 24px 0;
     font-size: 1.5rem;
     padding: 12px 10px;
     border-width: 2px;
-    transition-duration: .2s;
+    overflow: hidden;    
 }
 
-.sections .grid-container .cards .btn-container span img{
-    width: 1.5rem;
+.sections .grid-container .cards .btn-container span svg{
+    width: 1.2rem;
     aspect-ratio: 1 / 1;
-    margin: 0 0 -.25rem .75rem;
-    background-color: #fff;
+}
+
+.sections .grid-container .cards .btn-container span svg:nth-child(2){
+    display: none;
 }
 
 /*============== end of upcoming competition section styling ==============*/
@@ -974,6 +1004,7 @@ nav .main-nav .navigation .menu{
         width: 3rem;
         border-radius: 30px;
         border: 1px solid #449bd8;
+        overflow: hidden;
     }
     nav .main-nav .responsive-nav .responsive-nav-container ul .days-social .days-icons span img{
         display: block;
@@ -1309,15 +1340,24 @@ nav .main-nav .navigation .menu{
 }
 
 @media (max-width: 600px){
+    nav{
+        height: 4rem;
+    }
+    nav .main-nav .logo{
+        flex: 0;
+    }
     nav .main-nav .logo svg {
-        width: 10rem;
+        width: 8rem;
         margin: .5rem 0 .5rem 1rem;
         padding-left: 0;
-        height: 4rem;
+        height: 3rem;
     }
     nav .main-nav .navigation div{
         width: 4rem;
         height: 4rem;
+    }
+    nav .main-nav .navigation div img{
+        width: 1.2rem;
     }
     .image-slider .image-container .image{
         width: 100%;
@@ -1325,13 +1365,14 @@ nav .main-nav .navigation .menu{
         object-fit: contain;
         background: #00131f;
     }
-    
+    .sticky-nav{
+        top: 4rem;
+    }
     .why-choose-us .choose-us{
         width: 100%;
     }
     .why-choose-us .choose-us .why-us-content{
-        padding: 1rem;.sticky-nav ul{
-        display: block;}
+        padding: 1rem;
     }
     .image-stacks .image-stacks-container > :nth-child(1){
         margin-bottom: 5rem;
@@ -1373,3 +1414,21 @@ nav .main-nav .navigation .menu{
 
 }
 
+@media (max-width: 375px){
+    nav{
+        height: 3rem;
+    }
+    nav .main-nav .logo svg{
+        margin: .2rem;
+    }
+    nav .main-nav .navigation div{
+        width: 3rem;
+        height: 3rem;
+    }
+    nav .main-nav .navigation div img{
+        width: 1rem;
+    }
+    .sticky-nav{
+        top: 3rem;
+    }
+}
