@@ -129,6 +129,7 @@ nav .main-nav .navigation .menu{
 
 nav .main-nav .navigation .cart{
     position: relative;
+    z-index: -1;
 }
 
 nav .main-nav .navigation .cart::before{
@@ -999,6 +1000,7 @@ nav .main-nav .navigation .cart::before{
     }
     nav .main-nav .responsive-nav .responsive-nav-container ul .days-social .days-icons{
         display: flex;
+        gap: .5rem;
     }
     nav .main-nav .responsive-nav .responsive-nav-container ul .days-social .days-icons span{
         width: 3rem;
